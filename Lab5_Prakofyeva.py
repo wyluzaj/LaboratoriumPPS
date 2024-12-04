@@ -11,12 +11,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def filtr():
-    t = 10  # czas trwania
+    t = 1  # czas trwania
     fs = 1000  # częstotliwość próbkowania
-    f = 5  # częstotliwość sygnału
     A = 3  # amplituda
 
-    x = np.linspace(0, 1, fs, False)  # 1 sekunda
+    x = np.linspace(0, t, fs, False)
+
+    #y=Asin(2πf)
     y = A * np.sin(2 * np.pi * 50 * x)
     y += A * np.sin(2 * np.pi * 150 * x)
     y += A * np.sin(2 * np.pi * 300 * x)
@@ -112,4 +113,14 @@ def filtr():
     plt.grid(True)  # siatka
     plt.tight_layout()  # dopasowanie wykresu
     plt.show()  # wyświetlenie wykresu
+
+    plt.specgram(y, Fs=fs)
+    plt.colorbar().set_label('Moc [dB]')
+    plt.xlabel('Czas [s]')
+    plt.ylabel('Częstotliwość [Hz]')
+    plt.title('Spektrogram oryginalnego sygnału')
+    plt.grid(True)  # siatka
+    plt.tight_layout()
+    plt.show()
+
 filtr()
