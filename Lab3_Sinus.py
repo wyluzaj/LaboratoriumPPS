@@ -6,9 +6,11 @@ fs = 100 # czestotliwość próbkowania
 f = 5 #częstotliwość sygnału
 A = 2 #amplituda
 
-x = np.linspace(0, t, fs*t)
+n= fs*t #liczba próbek
+x = np.linspace(0, t, n) # start - 0,  czas_trwania, czaestotliwość_próbkowania*czas_trwania
 
-y = (A * np.sin(x * 2 * np.pi * f)) #s(t)=Asin(2πf)
+#s(t)=Asin(2πf)
+y = A * np.sin(x * 2 * np.pi * f)
 plt.plot(x, y)
 plt.xlabel('x')
 plt.ylabel('sin(x), y')
