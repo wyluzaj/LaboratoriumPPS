@@ -65,6 +65,7 @@ def filtr():
     plt.ylabel('Amplituda')
     plt.title('Sygnał po filtracji pasmowoprzepustowej (Bandpass)')
 
+    plt.grid(True)
     plt.tight_layout()
     plt.show()
 
@@ -83,15 +84,30 @@ def filtr():
     freq_band, fft_band = compute_fft(filtered_signalB, fs)
 
     # Rysowanie wykresu
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(18, 9))
     plt.subplot(4, 1, 1)
-    plt.plot(freq_orig, fft_orig, label="Oryginalny sygnał")
+    plt.plot(freq_orig, fft_orig)
+    plt.xlabel('Częstotliwość')
+    plt.ylabel('Amplituda')
+    plt.title('FFT - Oryginalny sygnał"')
+
     plt.subplot(4, 1, 2)
-    plt.plot(freq_high, fft_high, label="Górnoprzepustowy (Highpass)")
+    plt.plot(freq_high, fft_high)
+    plt.xlabel('Częstotliwość')
+    plt.ylabel('Amplituda')
+    plt.title('FFT - Górnoprzepustowy (Highpass)')
+
     plt.subplot(4, 1, 3)
-    plt.plot(freq_low, fft_low, label="Dolnoprzepustowy (Lowpass)")
+    plt.plot(freq_low, fft_low)
+    plt.xlabel('Częstotliwość')
+    plt.ylabel('Amplituda')
+    plt.title('FFT - Dolnoprzepustowy (Lowpass)')
+
     plt.subplot(4, 1, 4)
-    plt.plot(freq_band, fft_band, label="Pasmowoprzepustowy (Bandpass)")
+    plt.plot(freq_band, fft_band)
+    plt.xlabel('Częstotliwość')
+    plt.ylabel('Amplituda')
+    plt.title('FFT - Pasmowoprzepustowy (Bandpass)')
 
     plt.grid(True)  # siatka
     plt.tight_layout()  # dopasowanie wykresu
