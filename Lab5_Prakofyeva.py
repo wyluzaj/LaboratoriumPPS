@@ -15,7 +15,7 @@ def filtr():
     fs = 1000  # częstotliwość próbkowania
     A = 3  # amplituda
 
-    x = np.linspace(0, t, fs, False)
+    x = np.linspace(0, t, fs*t)
 
     #y=Asin(2πf)
     y = A * np.sin(2 * np.pi * 50 * x)
@@ -114,13 +114,13 @@ def filtr():
     plt.tight_layout()  # dopasowanie wykresu
     plt.show()  # wyświetlenie wykresu
 
-    plt.specgram(y, Fs=fs)
+    '''plt.specgram(y, Fs=fs)
     plt.colorbar().set_label('Moc [dB]')
     plt.xlabel('Czas [s]')
     plt.ylabel('Częstotliwość [Hz]')
     plt.title('Spektrogram oryginalnego sygnału')
     plt.grid(True)  # siatka
     plt.tight_layout()
-    plt.show()
+    plt.show()'''
 
 filtr()
