@@ -1,2 +1,2 @@
-Podstawy przetwarzania sygnałów - laboratoria
-prowadzący: mgr inż. Mateusz Kucharski
+Podstawy przetwarzania sygnałów - laboratoria.
+Prowadzący: mgr inż. Mateusz Kucharski
